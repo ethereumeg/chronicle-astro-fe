@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Download data bundle
+        run: wget -O src/data.json "https://data.chronicle.ethevents.club/"
+
       - name: Build
         run: npm run build
 
