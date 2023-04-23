@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Download data bundle
-        run: wget -O src/data.json "https://data.chronicle.ethevents.club/"
+        run: rm -f src/data.json && wget -O src/data.json "https://data.chronicle.ethevents.club/"
 
       - name: Build
         run: npm run build
