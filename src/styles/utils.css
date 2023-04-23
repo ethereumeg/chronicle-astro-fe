@@ -1,0 +1,8 @@
+
+.event-detail a { @apply underline hover:no-underline; }
+.header2 { @apply text-2xl mt-6 mb-2; }
+.header3 { @apply text-xl mt-3 mb-2; }
+
+ul li {
+    @apply ml-6 list-disc;
+}
