@@ -11,7 +11,7 @@ const { id } = Astro.params;
 const item = data.events.find(i => i.id === id);
 ---
 
-<Layout title={`${item.name} | Chronicle`}>
+<Layout title={item.name}>
   <EventDetail item={item} data={data} />
 </Layout>
 

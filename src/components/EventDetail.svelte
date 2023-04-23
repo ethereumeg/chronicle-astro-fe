@@ -43,13 +43,13 @@
             <div class="flex flex-wrap gap-2 text-center">
                 <div class="card hackathon"><span class="card-head">{item.hackathon.projects || '?'}</span><br />projects</div>
                 <div class="card hackathon"><span class="card-head">{@html item.hackathon.hackers_real ? `${item.hackathon.hackers_real}<span class="text-sm font-normal"> (≈${item.hackathon.hackers})</span>` : ( item.hackathon.hackers ? '≈'+item.hackathon.hackers : '?')}</span><br />hackers</div>
-                <div class="card hackathon"><span class="card-head">{item.hackathon.prizes_total || '?'}</span><br/> in prizes</div>
+                <div class="card hackathon"><span class="card-head">{item.hackathon.prizes_total || '?'}</span><br/> in prizes 🏆</div>
                 {#if item.hackathon.bounties_total}
                     <div class="card hackathon"><span class="card-head">{item.hackathon.bounties_total}</span><br/> in sponsor bounties</div>
                 {/if}
             </div>
             {#if item.hackathon.prizes}
-                <h3 class="header3">Prizes</h3>
+                <h3 class="header3">Prizes 🏆</h3>
                 <table>
                     {#each item.hackathon.prizes as prize}
                         <tr><td>{prize.name}</td><td class="pl-4">{prize.amount}</td></tr>
