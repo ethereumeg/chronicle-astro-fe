@@ -1,5 +1,7 @@
 
 .event-detail a { @apply underline hover:no-underline; }
+
+.header1 { @apply text-3xl mt-8 mb-4; }
 .header2 { @apply text-2xl mt-6 mb-2; }
 .header3 { @apply text-xl mt-3 mb-2; }
 
