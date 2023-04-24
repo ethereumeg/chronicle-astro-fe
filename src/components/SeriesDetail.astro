@@ -1,0 +1,15 @@
+---
+import EventList from '../components/EventList.svelte';
+const { item, data } = Astro.props;
+const events = data.events.filter(e => e.series === item.id)
+
+---
+<div>
+    <h1 class="detail-header">{item.name} (series)</h1>
+</div>
+<div>
+    <h2 class="header2">Events ({events.length})</h2>
+    <div>
+        <EventList items={events} data={data} />
+    </div>
+</div>

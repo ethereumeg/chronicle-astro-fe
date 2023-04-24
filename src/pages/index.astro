@@ -1,16 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import EventList from '../components/EventList.svelte';
+import EventOverview from '../components/EventOverview.svelte';
 import { config } from '../lib/config.js';
 import data from '../data.json';
 
 ---
 
 <Layout>
-	<h1 class="header1">Events</h1>
-	<EventList data={data} client:load />
+	<EventOverview data={data} client:load />
 </Layout>
-
-<style>
-</style>

@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SeriesDetail from '../../components/SeriesDetail.astro';
+import data from '../../data.json';
+
+export function getStaticPaths() {
+  return data.series.map(s => ({params: {id: s.id}}))
+}
+
+const { id } = Astro.params;
+const item = data.series.find(i => i.id === id);
+---
+
+
+<Layout title={item.name}>
+    <SeriesDetail item={item} data={data} />
+</Layout>
+
+<style>
+</style>

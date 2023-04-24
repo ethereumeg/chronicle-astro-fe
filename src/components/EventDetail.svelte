@@ -10,14 +10,14 @@
     const contributorsTypes = [
         { name: 'Speakers', role: 'speaker' },
         { name: 'Mentors', role: 'mentor' },
-        { name: 'Judge', role: 'judge' },  
-        { name: 'Team', role: 'team' },        
+        { name: 'Judge', role: 'judge' },
+        { name: 'Team', role: 'team' },
     ]
     const serie = item.series ? data.series.find(s => s.id === item.series) : null
 </script>
 
 <div class="event-detail">
-    <div class="text-4xl">{normalizedName(item)}</div>
+    <div class="detail-header">{normalizedName(item)}</div>
     <div class="flex flex-wrap mt-2 gap-4 items-center">
         <div class="flex gap-2">
             {#each item.types as type}
@@ -79,7 +79,7 @@
         <iframe width="560" height="315" src={item.aftermovie.replace("/watch?v=", '/embed/')} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     {/if}
 
-    <pre class="mt-64 p-4 bg-gray-200 mt-4"><code class="whitespace-pre-wrap">{JSON.stringify(item, null, 2)}</code></pre>
+    <!--pre class="mt-64 p-4 bg-gray-200 mt-4"><code class="whitespace-pre-wrap">{JSON.stringify(item, null, 2)}</code></pre-->
 </div>
 
 <style>
