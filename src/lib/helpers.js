@@ -6,7 +6,7 @@ export function formatPeriod(date, days) {
         return format(start, 'MMMM d, yyyy')
     }
 
-    const end = addDays(start, days)
+    const end = addDays(start, days-1)
     if (format(start, 'MM') === format(end, 'MM')) {
         return format(start, 'MMMM d-') + format(end, 'd, yyyy')
     }
