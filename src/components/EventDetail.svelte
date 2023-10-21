@@ -16,17 +16,27 @@
     const serie = item.series ? data.series.find(s => s.id === item.series) : null
 </script>
 
-<div class="event-detail">
-    <div class="detail-header">{normalizedName(item)}</div>
-    <div class="flex flex-wrap mt-2 gap-4 items-center">
-        <div class="flex gap-2">
-            {#each item.types as type}
-                <EventType {type} />
-            {/each}
+<div class="bg-gradient-to-br from-white to-gray-300">
+    <div class="py-10 text-center">
+        <div class="text-3xl font-semibold">{normalizedName(item)}</div>
+        <div class="text-lg mt-2">
+            {formatPeriod(item.date, item.days)} ({item.days} days)
+            <div class="text-lg inline-block ml-2">👥 {@html item.attendees_real ? `${item.attendees_real} <span class="text-sm">(≈${item.attendees})</span>` : (item.attendees ? '≈'+item.attendees : '?')}</div>
         </div>
-        <div class="text-lg">{formatPeriod(item.date, item.days)} ({item.days} days)</div>
-        <div class="text-lg"><CountryIco country={item.country} /> {item.place} [{item.region}]</div>
-        <div class="text-lg">👥 {@html item.attendees_real ? `${item.attendees_real} <span class="text-sm">(≈${item.attendees})</span>` : (item.attendees ? '≈'+item.attendees : '?')}</div>
+        <div class="text-lg mt-2"><CountryIco country={item.country} /> {item.place} [{item.region}]</div>
+        <div class="inline-block mt-3">
+            <div class="flex gap-2">
+                {#each item.types as type}
+                    <EventType {type} />
+                {/each}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="event-detail">
+
+    <div class="flex flex-wrap mt-2 gap-4 items-center">
     </div>
     <div class="flex flex-wrap gap-2 mt-3">
         {#if serie}
